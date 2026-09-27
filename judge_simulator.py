@@ -20,7 +20,7 @@ Author: magicpin AI Challenge Team
 # ██████  CONFIGURATION - EDIT THIS SECTION ██████
 # =============================================================================
 
-BOT_URL = "http://127.0.0.1:8000"
+BOT_URL = "https://magic-pin-challenge.vercel.app"
 
 # Choose your LLM provider: "openai", "anthropic", "gemini", "deepseek", "groq", "ollama", "openrouter"
 LLM_PROVIDER = "groq"
