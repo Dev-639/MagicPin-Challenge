@@ -370,9 +370,9 @@ def deterministic_compose(category: Dict[str, Any], merchant: Dict[str, Any],
             penalty_str = f" Non-compliance carries a ₹{penalty} penalty." if penalty else ""
             body = (
                 f"{owner}, compliance alert — {source}: {title} is effective {deadline}.{penalty_str} "
-                f"{summary} Should I prepare a 1-page compliance checklist and update your SOP before {deadline} for your {locality} practice?"
+                f"{summary} Should I prepare a 1-page compliance checklist and update your SOP before {deadline} for your {locality} practice? Reply YES to approve."
             )
-            rationale = f"Regulatory compliance alert ({source}) with ISO deadline ({deadline}), locality grounding ({locality}), and instant checklist offer."
+            rationale = f"Regulatory compliance alert ({source}) with ISO deadline ({deadline}), locality grounding ({locality}), and binary YES CTA."
 
         elif "competitor" in t_kind:
             dist = t_payload.get("distance_km", 1.2)
@@ -383,7 +383,7 @@ def deterministic_compose(category: Dict[str, Any], merchant: Dict[str, Any],
             body = (
                 f"{owner}, heads up: {comp_name} opened {dist}km away in {locality} on {opened_date}.{undercut_note} "
                 f"Your current visibility: {views:,} views, CTR {(ctr*100):.1f}%. "
-                f"Should I boost your '{offer_str}' to local searchers today?"
+                f"Should I boost your '{offer_str}' to local searchers today? Reply YES to approve."
             )
             rationale = f"Competitor opening ({comp_name}, {dist}km in {locality}) defense with visibility data and active offer boost."
 
@@ -396,7 +396,7 @@ def deterministic_compose(category: Dict[str, Any], merchant: Dict[str, Any],
             body = (
                 f"{owner}, your {metric} in {locality} dropped {abs(delta_pct)}% over the last {window} "
                 f"(baseline: {baseline}, total views: {views:,}). "
-                f"Should I activate a targeted promotion on '{offer_str}' to restore inbound momentum?"
+                f"Should I activate a targeted promotion on '{offer_str}' to restore inbound momentum? Reply YES to approve."
             )
             rationale = f"Performance dip trigger ({delta_pct}% on {metric}) with exact baseline ({baseline}) and offer promotion."
 
@@ -409,7 +409,7 @@ def deterministic_compose(category: Dict[str, Any], merchant: Dict[str, Any],
             body = (
                 f"{owner}, great news — your {metric} in {locality} jumped +{abs(delta_pct)}% this week "
                 f"(baseline: {baseline}). Likely driver: {driver}. "
-                f"Should I double down and push '{offer_str}' to capitalize on the momentum?"
+                f"Should I double down and push '{offer_str}' to capitalize on the momentum? Reply YES to approve."
             )
             rationale = f"Performance spike trigger (+{abs(delta_pct)}% on {metric}) with likely driver ({driver}) and amplification offer."
 
@@ -420,7 +420,7 @@ def deterministic_compose(category: Dict[str, Any], merchant: Dict[str, Any],
             body = (
                 f"{owner}, your {plan} plan for {name} ({locality}) has {days_rem} days remaining. "
                 f"Renewing early locks in your current ₹{amt:,}/yr rate and uninterrupted campaign boost. "
-                f"Should I queue the renewal invoice for you?"
+                f"Should I queue the renewal invoice for you? Reply YES to confirm."
             )
             rationale = f"Subscription renewal trigger for {plan} plan with {days_rem} days remaining and ₹{amt:,} rate."
 
@@ -431,7 +431,7 @@ def deterministic_compose(category: Dict[str, Any], merchant: Dict[str, Any],
             body = (
                 f"{owner}, {fest} is on {date_str} ({days_until} days away). "
                 f"Early campaign booking in {locality} captures 2.4x higher ROI. "
-                f"Should I prepare a festival campaign draft featuring '{offer_str}'?"
+                f"Should I prepare a festival campaign draft featuring '{offer_str}'? Reply YES to approve."
             )
             rationale = f"Festival advance preparation trigger ({fest} on {date_str}) with early-booking ROI and campaign draft."
 
